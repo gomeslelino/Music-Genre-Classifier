@@ -17,6 +17,10 @@ The GTZAN dataset was loaded and the features from audio files (Mel-frequency ce
 Then, a function to plot the raw waveform and the Short-Time Fourier Transform (STFT) spectrogram for the audio files was defined, iterating over each genre. For each genre, it selects the first audio file in that genre and plots the waveform and spectogram for it.
 The goal is to initially visualiza patterns in the genres, the comparison will be later refined when the correlation and similarities between them is better defined. 
 
+<p align="center">
+  <img width="1022" height="650" src="https://github.com/gomeslelino/Music-Genre-Classifier/blob/main/Pictures/Spectogram.png">
+</p>
+
 The STFT Spectrogram is a visualization of how the frequency content of a signal changes over time, while the Raw Waveform represents the amplitude of the signal over time without frequency information.
 
 ## Model Building
@@ -37,12 +41,19 @@ The results were plotted in two graphs:
 
 > Training and Validation Loss: This graph visualizes how the loss (error) changes over epochs for both the training and validation sets. It helps to assess whether the model is overfitting or underfitting by comparing the loss values between the training and validation sets. 
 
+<p align="center">
+  <img width="567" height="453" src="https://github.com/gomeslelino/Music-Genre-Classifier/blob/main/Pictures/Loss1.png">
+</p>
+
 The Validation Loss wasn't decreasing toward zero like Training Loss, ideally, we should have a decreasing training loss coupled with a decreasing validation loss, indicating that the model is learning well. Learning Rate and Batch Size were calibrate to improve results.
 
 > Training and Validation Accuracy: This graph shows how the accuracy of the model changes over epochs for both the training and validation sets. It provides insights into the model's ability to generalize to unseen data.
 
-Increasing accuracy on both sets indicates that the model is learning useful patterns from the training data and can generalize well to new data. Some iterations were run by calibrating the parameters and the best result achieved was stabilization at 0,7.
+<p align="center">
+  <img width="567" height="453" src="https://github.com/gomeslelino/Music-Genre-Classifier/blob/main/Pictures/accuracy1.png">
+</p>
 
+Increasing accuracy on both sets indicates that the model is learning useful patterns from the training data and can generalize well to new data. Some iterations were run by calibrating the parameters and the best result achieved was stabilization at 0,7.
 
 ## Model Evaluation
 
@@ -59,6 +70,10 @@ When the model is trained without data augmentation, however, we obtain:
 > F1-score: 0.69<br>
 
 The confusion matrix was also generated and corroborate this notion that there are a lot of musical similarities between the genres, so it is difficult to develop a model with much higher accuracy and precision:
+
+<p align="center">
+  <img width="833" height="743" src="https://github.com/gomeslelino/Music-Genre-Classifier/blob/main/Pictures/Confusion_Matrix.png">
+</p>
 
 Finally, I short python function was written to identify which genre was the most confused, that being "country", and which genre was the least ("disco"), a breakdown of country's similarities can be seen below:
 
